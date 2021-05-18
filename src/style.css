@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --blue: #0064eb;
+  --black: #000;
+  --gray: #808080;
+  --lightgray: #f9f9f9;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: var(--black);
+  background-color: var(--lightgray);
+}
+
+a {
+  text-decoration: initial;
+  color: var(--blue);
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  background-color: var(--blue);
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo {
+  font-size: 2.6em;
+  color: var(--white);
+  display: flex;
+}
+
+.header__container {
+  padding: 1em 2.5em;
+  align-items: center;
+}
+
+.header__search {
+  margin-left: 1.3em;
+}
+
+.search {
+  position: relative;
+  max-width: 31em;
+  width: 100%;
+}
+
+.search__icon {
+  display: flex;
+  position: absolute;
+  left: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search__input {
+  border: initial;
+  border-radius: 0.5em;
+  padding: 0.8em 1.2em 0.8em 3.2em;
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+
+.main__container {
+  margin-top: 2.5em;
+  padding: 0 3.5em;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile {
+  max-width: 18em;
+  width: 100%;
+}
+
+.profile__avatar {
+  border-radius: 50%;
+  height: 17.5em;
+  max-width: 17.5em;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.profile__avatar-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.profile__about {
+  margin-top: 1.8em;
+}
+
+.profile__name {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+
+.profile__nickname {
+  display: inline-block;
+  margin-top: 0.8em;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+}
+
+.profile__stats {
+  margin-top: 1.6em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__follow {
+  display: flex;
+  align-items: center;
+}
+
+.profile__follow-text {
+  margin-left: 0.5em;
+  line-height: 1.5rem;
+}
+
+.repositories {
+  width: 100%;
+}
+
+.main__repositories {
+  margin-left: 6em;
+}
+
+.repositories__title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.repositories__list {
+  margin-top: 1.8rem;
+  display: grid;
+  row-gap: 1.5em;
+}
+
+.repositories__item-wrapper {
+  background-color: var(--white);
+  padding: 1.5em 2em;
+  border-radius: 0.4em;
+}
+
+.repositories__item-link {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.repositories__item-description {
+  margin-top: 1rem;
+}
+
+.notification__wrapper {
+  max-width: 14.5em;
+  margin: 0 auto;
+}
+
+.notification__icon {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.notification__text {
+  display: inline-block;
+  margin-top: 1.5em;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  color: var(--gray);
+  text-align: center;
+}

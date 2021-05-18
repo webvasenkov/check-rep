@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from '../components/Header';
 import Profile from '../components/Profile';
-import RepositoryCard from '../components/RepositoryCard';
+import Repositories from '../components/Repositories';
 
 const Main = () => {
   return (
-    <div>
-      <Header />
-      <Profile />
-      <RepositoryCard />
-    </div>
+    <section className='main'>
+      <div className='main__container container'>
+        <Profile />
+        <Repositories />
+      </div>
+    </section>
   );
 };
 
