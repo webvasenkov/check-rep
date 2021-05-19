@@ -2,10 +2,12 @@
 
 :root {
   --blue: #0064eb;
+  --lightblue: #3b90ff;
   --black: #000;
   --gray: #808080;
   --lightgray: #f9f9f9;
   --white: #fff;
+  --transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -25,6 +27,11 @@ body {
 a {
   text-decoration: initial;
   color: var(--blue);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--lightblue);
 }
 
 ul {
@@ -79,8 +86,7 @@ ul {
 }
 
 .main__container {
-  margin-top: 2.5em;
-  padding: 0 3.5em;
+  padding: 2.5em 3.5em 1.75em;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -89,6 +95,10 @@ ul {
 .profile {
   max-width: 18em;
   width: 100%;
+}
+
+.main__profile {
+  margin-right: 6em;
 }
 
 .profile__avatar {
@@ -140,11 +150,12 @@ ul {
 }
 
 .repositories {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-}
-
-.main__repositories {
-  margin-left: 6em;
+  min-height: 37em;
+  height: 100%;
+  position: relative;
 }
 
 .repositories__title {
@@ -175,14 +186,34 @@ ul {
   margin-top: 1rem;
 }
 
+.repositories__item-description--dim {
+  color: var(--gray);
+}
+
+.repositories__pagination {
+  margin: auto 0 0 auto;
+}
+
+.pagination {
+  display: flex;
+}
+
+.notification {
+  width: 100%;
+  height: 100%;
+  margin-top: 12em;
+}
+
 .notification__wrapper {
   max-width: 14.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
 }
 
 .notification__icon {
   width: max-content;
-  margin: 0 auto;
 }
 
 .notification__text {
@@ -192,4 +223,25 @@ ul {
   line-height: 1.9rem;
   color: var(--gray);
   text-align: center;
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0.6em solid var(--blue);
+  border-top: 0.6em solid var(--white);
+  border-radius: 50%;
+  width: 6em;
+  height: 6em;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
