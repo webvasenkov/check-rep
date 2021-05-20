@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ReactComponent as SearchIcon } from '../assets/icons/search.svg';
 import { ReactComponent as UserIcon } from '../assets/icons/regular-user.svg';
 import { ReactComponent as ErrorIcon } from '../assets/icons/error.svg';
@@ -33,3 +34,9 @@ const Notification = ({ type, mt, children }) => {
 };
 
 export default Notification;
+
+Notification.propTypes = {
+  type: PropTypes.oneOf(['search', 'not-found', 'empty-list']).isRequired,
+  mt: PropTypes.number,
+  children: PropTypes.string.isRequired,
+};

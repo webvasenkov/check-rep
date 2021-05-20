@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setData, resetDataAC } from '../store/reducers/mainReducer';
 import { ReactComponent as LogoIcon } from '../assets/icons/github.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/search.svg';
 
-const Header = ({ loadData }) => {
+const Header = () => {
+  const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState('');
 
   const handleChange = (e) => setSearchValue(e.target.value);
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') loadData(searchValue);
+  const handleSetData = (e) => {
+    if (e.key === 'Enter') dispatch(setData(searchValue));
     else return;
+  };
+
+  const handleResetData = () => {
+    setSearchValue('');
+    dispatch(resetDataAC());
   };
 
   return (
     <header className='header'>
       <div className='header__container container'>
-        <div className='logo'>
+        <div className='logo' onClick={handleResetData}>
           <LogoIcon />
         </div>
         <div className='header__search search'>
@@ -28,7 +36,7 @@ const Header = ({ loadData }) => {
             value={searchValue}
             placeholder='Enter GitHub username'
             onChange={handleChange}
-            onKeyPress={handleKeyPress}
+            onKeyPress={handleSetData}
           />
         </div>
       </div>

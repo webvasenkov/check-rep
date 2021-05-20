@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RepositoryItem = ({ url, name, description }) => {
   const styleDescription = description
@@ -18,3 +19,9 @@ const RepositoryItem = ({ url, name, description }) => {
 };
 
 export default RepositoryItem;
+
+RepositoryItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+};

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { ReactComponent as UserIcon } from '../assets/icons/user.svg';
 import { ReactComponent as UsersIcon } from '../assets/icons/users.svg';
+import { roundNumber } from '../utils/math';
 
-const Profile = ({ profile }) => {
-  const { avatar_url, name, html_url, login, followers, following } = profile;
-
+const Profile = ({ profile: { avatar_url, name, html_url, login, followers, following } }) => {
   return (
     <div className='main__profile profile'>
       <div className='profile__avatar'>
@@ -20,13 +20,13 @@ const Profile = ({ profile }) => {
             <div className='profile__follow-icon'>
               <UsersIcon />
             </div>
-            <p className='profile__follow-text'>{followers} followers</p>
+            <p className='profile__follow-text'>{roundNumber(followers)} followers</p>
           </div>
           <div className='profile__follow'>
             <div className='profile__follow-icon'>
               <UserIcon />
             </div>
-            <p className='profile__follow-text'>{following} following</p>
+            <p className='profile__follow-text'>{roundNumber(following)} following</p>
           </div>
         </div>
       </div>
@@ -34,4 +34,15 @@ const Profile = ({ profile }) => {
   );
 };
 
-export default Profile;
+export default memo(Profile);
+
+Profile.propTypes = {
+  profile: PropTypes.shape({
+    avatar_url: PropTypes.string,
+    name: PropTypes.string,
+    html_url: PropTypes.string,
+    login: PropTypes.string,
+    followers: PropTypes.number,
+    following: PropTypes.number,
+  }).isRequired,
+};

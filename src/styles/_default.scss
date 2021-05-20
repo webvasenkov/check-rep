@@ -1,0 +1,29 @@
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #000;
+  background-color: $lightgray;
+}
+
+a {
+  text-decoration: initial;
+  color: $blue;
+  transition: $transition;
+}
+
+a:hover {
+  color: $lightblue;
+}
+
+ul {
+  list-style: none;
+}

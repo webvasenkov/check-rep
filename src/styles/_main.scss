@@ -1,0 +1,309 @@
+@import './variables';
+
+.header {
+  background-color: $blue;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo {
+  font-size: 2.6em;
+  color: #fff;
+  display: flex;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0.6em solid $blue;
+  border-top: 0.6em solid #fff;
+  border-radius: 50%;
+  width: 6em;
+  height: 6em;
+  animation: spin 0.6s linear infinite;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  &__arrow-left,
+  &__arrow-right {
+    cursor: pointer;
+    svg path {
+      stroke: $blue;
+    }
+  }
+
+  &__arrow-left {
+    transform: rotate(180deg);
+    margin-right: 1.2rem;
+  }
+
+  &__arrow-right {
+    margin-left: 1.2rem;
+  }
+
+  &__arrow--disabled {
+    cursor: default;
+    svg path {
+      stroke: $gray;
+    }
+  }
+
+  &__page {
+    cursor: pointer;
+    padding: 0.1em 0.4em;
+    margin: 0 0.3em;
+
+    &--active {
+      background-color: $blue;
+      border-radius: 0.2em;
+    }
+  }
+
+  &__link,
+  &__break {
+    cursor: pointer;
+    color: $gray;
+    font-size: 0.9rem;
+  }
+
+  &__break {
+    margin: 0 0.3em;
+  }
+
+  &__link--active {
+    color: #fff;
+  }
+}
+
+.header {
+  &__container {
+    padding: 1em 2.5em;
+    align-items: center;
+  }
+
+  &__search {
+    margin-left: 1.3em;
+  }
+}
+
+.search {
+  position: relative;
+  max-width: 31em;
+  width: 100%;
+
+  &__icon {
+    display: flex;
+    position: absolute;
+    left: 1.2em;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__input {
+    border: initial;
+    border-radius: 0.5em;
+    padding: 0.8em 1.2em 0.8em 3.2em;
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+  }
+}
+
+.main {
+  &__container {
+    padding: 2.5em 3.5em 1.75em;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 576px) {
+      padding: 2.5em 1em 1.75em;
+    }
+  }
+
+  &__profile {
+    margin-right: 6em;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.profile {
+  max-width: 18em;
+  width: 100%;
+
+  &__avatar {
+    border-radius: 50%;
+    height: 17.5em;
+    max-width: 17.5em;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__avatar-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__about {
+    margin-top: 1.8em;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
+
+  &__nickname {
+    display: inline-block;
+    margin-top: 0.8em;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+
+  &__stats {
+    margin-top: 1.6em;
+    display: flex;
+  }
+
+  &__follow {
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      margin-right: 1em;
+    }
+  }
+
+  &__follow-text {
+    margin-left: 0.5em;
+    line-height: 1.5rem;
+  }
+}
+
+.repositories {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin-top: 2.5em;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+
+  &__list {
+    margin-top: 1.8rem;
+    display: grid;
+    row-gap: 1.5em;
+  }
+
+  &__item-wrapper {
+    background-color: #fff;
+    padding: 1.5em 2em;
+    border-radius: 0.4em;
+  }
+
+  &__item-link {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  &__item-description {
+    margin-top: 1rem;
+  }
+
+  &__item-description--dim {
+    color: $gray;
+  }
+
+  &__pagination {
+    display: flex;
+    margin: 1.5em 0 0 auto;
+    align-items: center;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__pagination-info {
+    color: $gray;
+    font-size: 0.9rem;
+    margin-right: 1.5em;
+
+    @media (max-width: 576px) {
+      margin-bottom: 0.8em;
+      margin-right: 0;
+    }
+  }
+}
+
+.notification {
+  width: 100%;
+  height: 100%;
+  margin-top: 12em;
+
+  &__wrapper {
+    max-width: 14.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    width: max-content;
+  }
+
+  &__text {
+    display: inline-block;
+    margin-top: 1.5em;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    color: $gray;
+    text-align: center;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
