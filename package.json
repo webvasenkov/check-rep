@@ -1,5 +1,5 @@
 {
-  "name": "check-rep",
+  "name": "check-repos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
